@@ -1,0 +1,132 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "assembly",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#directive"
+		},
+		{
+			"include": "#function"
+		},
+		{
+			"include": "#parameters"
+		},
+		{
+			"include": "#labels"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns":[
+				{
+					"begin": ";",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.z80"
+						}
+					},
+					"end": "$",
+					"name": "comment.line.z80"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.single.z80",
+					"begin": "'",
+					"end": "'"
+				}
+			]
+		},
+		"directive": {
+			"patterns": [
+				{
+					"match": "(?i)(org|run|save|dsk)",
+					"captures": {
+						"1": {
+							"name": "keyword.control.directive.z80"
+						}
+					},
+					"name": "entity.name.function.preprocessor.z80"
+				}
+			]
+		},
+		"function": {
+			"patterns": [
+				{
+					"name": "keyword.function.z80",
+					"match": "(?i)\\b(muluw|mulub|rrca|rlca|retn|reti|push|outi|outd|otir|otdr|ldir|lddr|inir|indr|halt|cpir|cpdr|xor|xor|sub|sub|srl|srl|sra|sra|sla|sla|set|set|scf|sbc|sbc|sbc|rst|rrd|rrc|rrc|rra|rld|rlc|rlc|rla|ret|ret|res|res|pop|out|nop|neg|ldi|ldd|ini|ind|inc|inc|exx|dec|dec|daa|cpl|cpi|cpd|ccf|bit|bit|and|and|add|add|add|adc|adc|adc|rr|rr|rl|rl|or|or|ld|ld|ld|ld|ld|jp|in|im|ex|ex|ei|di|cp|cp)\\b"
+				}
+			]
+		},
+		"labels": {
+			"patterns": [
+				{
+					"name": "source.z80",
+					"match": "(?i)([a-z]+[a-z0-9]*)\\:",
+					"captures": {
+						"1": {
+							"name": "keyword.control.z80"
+						}
+					}
+				}
+				
+			]
+		},
+		"parameters": {
+			"patterns": [
+				{
+					"name": "constant.numeric.decimal.z80",
+					"match": "(?i)(\\$|&)[0-9a-f]+"
+				},
+				{
+					"name": "constant.numeric.decimal.z80",
+					"match": "(?i)[0-9a-f]+h"
+				},
+				{
+					"name": "constant.numeric.decimal.z80",
+					"match": "[0-9]+"
+				},
+				{
+					"name": "variable.other.readwrite.z80",
+					"match": "(?i)(\\((sp|pc|ix|iy|ab|af|bc|de|hl|ix|iy|a|b|c|d|e|h|l|f|i|r)\\))"
+				},
+				{
+					"name": "variable.other.readwrite.z80",
+					"match": "(?i)(\\([0-9]+\\))"
+				},
+				{
+					"name": "variable.other.readwrite.z80",
+					"match": "(?i)(\\([0-9a-f]+h\\))"
+				},
+				{
+					"name": "variable.other.readwrite.z80",
+					"match": "(?i)(\\((\\$|&)[0-9a-f]+\\))"
+				},
+				{
+					"name": "source.z80",
+					"match": "(?i)\\b(ixl|ixh|iyl|iyh|sp|pc|ix|iy|ab|af|bc|de|hl|ix|iy|a|b|c|d|e|h|l|f|i|r)\\b",
+					"captures": {
+						"1": {
+							"name": "entity.name.type.z80"
+						}
+					}
+				},
+				{
+					"name": "entity.other.attribute.z80",
+					"match": "(?i)\\b(nc|nz|pe|po|z|m|p|c)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.z80"
+}
+
+

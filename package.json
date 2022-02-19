@@ -1,0 +1,25 @@
+{
+    "name": "z80",
+    "displayName": "z80",
+    "description": "Z80 assembly",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.64.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "z80",
+            "aliases": ["assembly", "z80"],
+            "extensions": ["asm"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "z80",
+            "scopeName": "source.z80",
+            "path": "./syntaxes/z80.tmLanguage.json"
+        }]
+    }
+}

@@ -1,0 +1,332 @@
+{
+	"z80 adc": {
+		"prefix": "adc",
+		"description": "ADC",
+		"body": ["ADC $1, $2"]
+	},
+	"z80 add": {
+		"prefix": "add",
+		"description": "ADD",
+		"body": ["ADD $1, $2"]
+	},
+	"z80 and": {
+		"prefix": "and",
+		"description": "AND",
+		"body": ["AND $1"]
+	},
+	"z80 bit": {
+		"prefix": "bit",
+		"description": "BIT",
+		"body": ["BIT $1, $2"]
+	},
+	"z80 ccf": {
+		"prefix": "ccf",
+		"description": "CCF",
+		"body": ["CCF"]
+	},
+	"z80 cp": {
+		"prefix": "cp",
+		"description": "CP",
+		"body": ["CP $1"]
+	},
+	"z80 cpd": {
+		"prefix": "cpd",
+		"description": "CPD",
+		"body": ["CPD"]
+	},
+	"z80 cpdr": {
+		"prefix": "cpdr",
+		"description": "CPDR",
+		"body": ["CPDR"]
+	},
+	"z80 cpi": {
+		"prefix": "cpi",
+		"description": "CPI",
+		"body": ["CPI"]
+	},
+	"z80 cpir": {
+		"prefix": "cpir",
+		"description": "CPIR",
+		"body": ["CPIR"]
+	},
+	"z80 cpl": {
+		"prefix": "cpl",
+		"description": "CPL",
+		"body": ["CPL"]
+	},
+	"z80 daa": {
+		"prefix": "daa",
+		"description": "DAA",
+		"body": ["DAA"]
+	},
+	"z80 dec": {
+		"prefix": "dec",
+		"description": "DEC",
+		"body": ["DEC $1"]
+	},
+	"z80 di": {
+		"prefix": "di",
+		"description": "DI",
+		"body": ["DI"]
+	},
+	"z80 ei": {
+		"prefix": "ei",
+		"description": "EI",
+		"body": ["EI"]
+	},
+	"z80 ex": {
+		"prefix": "ex",
+		"description": "EX",
+		"body": ["EX $1, $2"]
+	},
+	"z80 exx": {
+		"prefix": "exx",
+		"description": "EXX",
+		"body": ["EXX"]
+	},
+	"z80 halt": {
+		"prefix": "halt",
+		"description": "HALT",
+		"body": ["HALT"]
+	},
+	"z80 im": {
+		"prefix": "im",
+		"description": "IM",
+		"body": ["IM $1"]
+	},
+	"z80 in": {
+		"prefix": "in",
+		"description": "IN",
+		"body": ["IN $1, $2"]
+	},
+	"z80 inc": {
+		"prefix": "inc",
+		"description": "INC",
+		"body": ["INC $1"]
+	},
+	"z80 ind": {
+		"prefix": "ind",
+		"description": "IND",
+		"body": ["IND"]
+	},
+	"z80 indr": {
+		"prefix": "indr",
+		"description": "INDR",
+		"body": ["INDR"]
+	},
+	"z80 ini": {
+		"prefix": "ini",
+		"description": "INI",
+		"body": ["INI"]
+	},
+	"z80 inir": {
+		"prefix": "inir",
+		"description": "INIR",
+		"body": ["INIR"]
+	},
+	"z80 jp": {
+		"prefix": "jp",
+		"description": "JP",
+		"body": ["JP $1"]
+	},
+	"z80 ld": {
+		"prefix": "ld",
+		"description": "LD",
+		"body": ["LD $1, $2"]
+	},
+	"z80 ldd": {
+		"prefix": "ldd",
+		"description": "LDD",
+		"body": ["LDD"]
+	},
+	"z80 lddr": {
+		"prefix": "lddr",
+		"description": "LDDR",
+		"body": ["LDDR"]
+	},
+	"z80 ldi": {
+		"prefix": "ldi",
+		"description": "LDI",
+		"body": ["LDI"]
+	},
+	"z80 ldir": {
+		"prefix": "ldir",
+		"description": "LDIR",
+		"body": ["LDIR"]
+	},
+	"z80 mulub": {
+		"prefix": "mulub",
+		"description": "MULUB",
+		"body": ["MULUB $1, $2"]
+	},
+	"z80 muluw": {
+		"prefix": "muluw",
+		"description": "MULUW",
+		"body": ["MULUW $1, $2"]
+	},
+	"z80 neg": {
+		"prefix": "neg",
+		"description": "NEG",
+		"body": ["NEG"]
+	},
+	"z80 nop": {
+		"prefix": "nop",
+		"description": "NOP",
+		"body": ["NOP"]
+	},
+	"z80 or": {
+		"prefix": "or",
+		"description": "OR",
+		"body": ["OR $1"]
+	},
+	"z80 otdr": {
+		"prefix": "otdr",
+		"description": "OTDR",
+		"body": ["OTDR"]
+	},
+	"z80 otir": {
+		"prefix": "otir",
+		"description": "OTIR",
+		"body": ["OTIR"]
+	},
+	"z80 out": {
+		"prefix": "out",
+		"description": "OUT",
+		"body": ["OUT $1, $2"]
+	},
+	"z80 outd": {
+		"prefix": "outd",
+		"description": "OUTD",
+		"body": ["OUTD"]
+	},
+	"z80 outi": {
+		"prefix": "outi",
+		"description": "OUTI",
+		"body": ["OUTI"]
+	},
+	"z80 pop": {
+		"prefix": "pop",
+		"description": "POP",
+		"body": ["POP $1"]
+	},
+	"z80 push": {
+		"prefix": "push",
+		"description": "PUSH",
+		"body": ["PUSH $1"]
+	},
+	"z80 res": {
+		"prefix": "res",
+		"description": "RES",
+		"body": ["RES $1, $2"]
+	},
+	"z80 ret": {
+		"prefix": "ret",
+		"description": "RET",
+		"body": ["RET $1"]
+	},
+	"z80 reti": {
+		"prefix": "reti",
+		"description": "RETI",
+		"body": ["RETI"]
+	},
+	"z80 retn": {
+		"prefix": "retn",
+		"description": "RETN",
+		"body": ["RETN"]
+	},
+	"z80 rl": {
+		"prefix": "rl",
+		"description": "RL",
+		"body": ["RL $1"]
+	},
+	"z80 rla": {
+		"prefix": "rla",
+		"description": "RLA",
+		"body": ["RLA"]
+	},
+	"z80 rlc": {
+		"prefix": "rlc",
+		"description": "RLC",
+		"body": ["RLC $1"]
+	},
+	"z80 rlca": {
+		"prefix": "rlca",
+		"description": "RLCA",
+		"body": ["RLCA"]
+	},
+	"z80 rld": {
+		"prefix": "rld",
+		"description": "RLD",
+		"body": ["RLD"]
+	},
+	"z80 rr": {
+		"prefix": "rr",
+		"description": "RR",
+		"body": ["RR $1"]
+	},
+	"z80 rra": {
+		"prefix": "rra",
+		"description": "RRA",
+		"body": ["RRA"]
+	},
+	"z80 rrc": {
+		"prefix": "rrc",
+		"description": "RRC",
+		"body": ["RRC $1"]
+	},
+	"z80 rrca": {
+		"prefix": "rrca",
+		"description": "RRCA",
+		"body": ["RRCA"]
+	},
+	"z80 rrd": {
+		"prefix": "rrd",
+		"description": "RRD",
+		"body": ["RRD"]
+	},
+	"z80 rst": {
+		"prefix": "rst",
+		"description": "RST",
+		"body": ["RST $1"]
+	},
+	"z80 sbc": {
+		"prefix": "sbc",
+		"description": "SBC",
+		"body": ["SBC $1, $2"]
+	},
+	"z80 scf": {
+		"prefix": "scf",
+		"description": "SCF",
+		"body": ["SCF"]
+	},
+	"z80 set": {
+		"prefix": "set",
+		"description": "SET",
+		"body": ["SET $1, $2"]
+	},
+	"z80 sla": {
+		"prefix": "sla",
+		"description": "SLA",
+		"body": ["SLA $1"]
+	},
+	"z80 sra": {
+		"prefix": "sra",
+		"description": "SRA",
+		"body": ["SRA $1"]
+	},
+	"z80 srl": {
+		"prefix": "srl",
+		"description": "SRL",
+		"body": ["SRL $1"]
+	},
+	"z80 sub": {
+		"prefix": "sub",
+		"description": "SUB",
+		"body": ["SUB $1"]
+	},
+	"z80 xor": {
+		"prefix": "xor",
+		"description": "XOR",
+		"body": ["XOR $1"]
+	}
+}

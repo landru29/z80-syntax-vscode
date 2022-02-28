@@ -15,24 +15,26 @@
 			"include": "#function"
 		},
 		{
-			"include": "#parameters"
+			"include": "#labels"
 		},
 		{
-			"include": "#labels"
+			"include": "#operators"
+		},
+		{
+			"include": "#parameters"
 		}
 	],
 	"repository": {
 		"comments": {
 			"patterns":[
 				{
-					"begin": ";",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.comment.z80"
+					"match": "(;.*)$",
+					"captures": {
+						"1": {
+							"name": "comment.line.z80"
 						}
 					},
-					"end": "$",
-					"name": "comment.line.z80"
+					"name": "emphasis.z80"
 				}
 			]
 		},
@@ -47,37 +49,54 @@
 		},
 		"directive": {
 			"patterns": [
+				
 				{
-					"match": "(?i)(org|run|save|dsk)",
+					"match": "(?i)(defb|defm|db|dm|defw|defi|defr|defs|limit|org|run|save|align|protect|str|charset|equ|dsk|amdos|print|fail|stop|noexport|assert|if|ifnot|ifdef|ifndef|undef|ifused|ifnused|switch|repeat|until|rend|while|wend|macro|mend|module|struct|endstruct|ticker\\s+start|ticker\\s+stop|ticker\\s+stopzx|incbin|include|read)",
 					"captures": {
 						"1": {
 							"name": "keyword.control.directive.z80"
 						}
-					},
-					"name": "entity.name.function.preprocessor.z80"
+					}
 				}
 			]
 		},
 		"function": {
 			"patterns": [
 				{
-					"name": "keyword.function.z80",
-					"match": "(?i)\\b(muluw|mulub|rrca|rlca|retn|reti|push|outi|outd|otir|otdr|ldir|lddr|inir|indr|halt|cpir|cpdr|xor|xor|sub|sub|srl|srl|sra|sra|sla|sla|set|set|scf|sbc|sbc|sbc|rst|rrd|rrc|rrc|rra|rld|rlc|rlc|rla|ret|ret|res|res|pop|out|nop|neg|ldi|ldd|ini|ind|inc|inc|exx|dec|dec|daa|cpl|cpi|cpd|ccf|bit|bit|and|and|add|add|add|adc|adc|adc|rr|rr|rl|rl|or|or|ld|ld|ld|ld|ld|jp|in|im|ex|ex|ei|di|cp|cp)\\b"
+					"name": "entity.name.function.z80",
+					"match": "(?i)\\b(muluw|mulub|rrca|rlca|retn|reti|push|outi|outd|otir|otdr|ldir|lddr|inir|indr|halt|cpir|cpdr|xor|sub|srl|sra|sla|set|scf|sbc|sbc|rst|rrd|rrc|rra|rld|rlc|rla|ret|res|pop|out|nop|neg|ldi|ldd|ini|ind|inc|exx|dec|daa|cpl|cpi|cpd|ccf|bit|and|add|adc|rr|rl|or|ld|jp|in|im|ex|ei|di|cp)\\b"
 				}
 			]
 		},
 		"labels": {
 			"patterns": [
 				{
-					"name": "source.z80",
+					"name": "emphasis.z80",
 					"match": "(?i)([a-z]+[a-z0-9]*)\\:",
 					"captures": {
 						"1": {
-							"name": "keyword.control.z80"
+							"name": "markup.underline.z80"
+						}
+					}
+				},
+				{
+					"name": "emphasis.z80",
+					"match": "(?i)(\\.[a-z]+[a-z0-9]*)",
+					"captures": {
+						"1": {
+							"name": "markup.underline.z80"
+						}
+					}
+				},
+				{
+					"name": "emphasis.z80",
+					"match": "(?i)(@[a-z]+[a-z0-9]*)",
+					"captures": {
+						"1": {
+							"name": "markup.underline.z80"
 						}
 					}
 				}
-				
 			]
 		},
 		"parameters": {
@@ -88,6 +107,10 @@
 				},
 				{
 					"name": "constant.numeric.decimal.z80",
+					"match": "(?i)(#|&)[0-9a-f]+"
+				},
+				{
+					"name": "constant.numeric.decimal.z80",
 					"match": "(?i)[0-9a-f]+h"
 				},
 				{
@@ -95,19 +118,19 @@
 					"match": "[0-9]+"
 				},
 				{
-					"name": "variable.other.readwrite.z80",
+					"name": "variable.language.z80",
 					"match": "(?i)(\\((sp|pc|ix|iy|ab|af|bc|de|hl|ix|iy|a|b|c|d|e|h|l|f|i|r)\\))"
 				},
 				{
-					"name": "variable.other.readwrite.z80",
+					"name": "variable.language.z80",
 					"match": "(?i)(\\([0-9]+\\))"
 				},
 				{
-					"name": "variable.other.readwrite.z80",
+					"name": "variable.language.z80",
 					"match": "(?i)(\\([0-9a-f]+h\\))"
 				},
 				{
-					"name": "variable.other.readwrite.z80",
+					"name": "variable.language.z80",
 					"match": "(?i)(\\((\\$|&)[0-9a-f]+\\))"
 				},
 				{
@@ -122,6 +145,26 @@
 				{
 					"name": "entity.other.attribute.z80",
 					"match": "(?i)\\b(nc|nz|pe|po|z|m|p|c)\\b"
+				},
+				{
+					"name": "variable.language.z80",
+					"match": "(?i)\\b([a-z_\\.@][a-z0-9_]*)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.arithmetic.z80",
+					"match": "(?i)(\\-|\\+|\\*|\\/|\\^|xor|and|or|&&|&|<<|>>|<=|<|>=|>|!=|<>|%%|mod|\\||\\|\\|)"
+				},
+				{
+					"match": "(?i)\\b(hi|sin|asin|atan|int|floor|abs|ln|exp|lo|cos|acos|frac|ceil|rnd|log10|sqrt)\\b\\s*\\([^\\)]*\\)",
+					"captures": {
+						"1": {
+							"name": "support.function.z80"
+						}
+					}
 				}
 			]
 		}

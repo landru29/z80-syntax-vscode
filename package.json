@@ -3,6 +3,26 @@
     "displayName": "z80",
     "description": "Z80 assembly",
     "version": "0.0.1",
+    "publisher": "landru29",
+    "icon": "resources/icon_128x.png",
+    "author": {
+        "name": "Cyrille Meichel"
+    },
+    "keywords": [
+        "z80",
+        "asm",
+        "intellisense",
+        "references",
+        "symbols",
+        "format",
+        "autocomplete",
+        "language",
+        "support"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/landru29/z80-syntax-vscode.git"
+      },
     "engines": {
         "vscode": "^1.64.0"
     },
@@ -12,7 +32,7 @@
     "contributes": {
         "languages": [{
             "id": "z80",
-            "aliases": ["assembly", "z80"],
+            "aliases": ["assembly", "z80", "asm"],
             "extensions": ["asm"],
             "configuration": "./language-configuration.json"
         }],
@@ -20,6 +40,12 @@
             "language": "z80",
             "scopeName": "source.z80",
             "path": "./syntaxes/z80.tmLanguage.json"
-        }]
+        }],
+        "snippets": [
+            {
+                "language": "z80",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
     }
 }
